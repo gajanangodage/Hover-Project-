@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="btns">
+        <button class="btn">Hover me </button>
+        <button class="btn">Hover me </button>
+        <button class="btn">Hover me </button>
+    </div>
+    <style>
+        .btns{
+            display: flex;
+            column-gap: 2rem;
+            background-color: var(--color-white-shade);
+        }
+        .btn{
+            background-color: var(--color-black);
+            color: var(--color-white);
+            cursor: pointer;
+            transition: 
+            scale 0.25s ease-in,
+            opacity 0.25s ease-in,
+            filter 0.25s ease-in;
+        }
+        &:hover{
+            scale: 1.2;
+        }
+        .btns:has(.btn:hover) .btn:not(:hover)
+        {
+            scale:0.8;
+            opacity: 0.8;
+            filter: blur(4px);
+        }
+    </style>
+</body>
+</html>
